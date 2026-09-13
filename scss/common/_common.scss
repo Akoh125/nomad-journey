@@ -1,0 +1,46 @@
+// 共通部分
+html {
+    font-size: 100%;
+}
+
+body {
+    background-color: #C2BCB1;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit; // 親要素の文字色をそのまま引き継ぐ
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+}
+
+li {
+    list-style: none;
+}
+
+.section-copy {
+    text-align: center;
+    font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+    font-weight: bold;
+    font-size: 24px;
+    margin-block: 16px;
+    color: black;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.archive-detail-month {
+    text-align: center;
+    font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+    font-size: 24px;
+}

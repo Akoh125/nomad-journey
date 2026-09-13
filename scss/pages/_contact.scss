@@ -1,0 +1,171 @@
+.contact {
+    background-color: #C2BCB1;
+    color: black;
+    padding: 60px 0 100px;
+}
+
+.contact .section-title {
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 60px;
+}
+
+.contact-inner {
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+// 左：テキスト
+.contact-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    p {
+        font-size: 15px;
+        line-height: 1.8;
+        font-family: 'Forum', sans-serif;
+        font-weight: bold;
+    }
+}
+
+// 右：フォーム
+.contact-form {
+    flex: 1;
+
+    form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    label {
+        display: block;
+        font-size: 15px;
+        margin-bottom: 8px;
+        margin-top: 24px;
+        font-family: 'Forum', sans-serif;
+        font-weight: bold;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+        display: block;
+        width: 100%;
+        border: none;
+        background-color: rgb(241, 236, 230);
+        padding: 12px;
+        font-size: 15px;
+        margin-top: 8px;
+        box-sizing: border-box;
+    }
+
+    input[type="text"],
+    input[type="email"] {
+        height: 48px;
+    }
+
+    textarea {
+        height: 140px;
+    }
+}
+
+.submit-btn {
+    margin-top: 40px;
+    font-weight: bold;
+
+    input[type="submit"] {
+        display: block;
+        width: 100%;
+        padding: 16px 0;
+        background: transparent;
+        color: rgb(241, 236, 230);
+        border: 1px solid rgb(241, 236, 230);
+        font-size: 15px;
+        cursor: pointer;
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+            background-color: rgb(241, 236, 230);
+            color: #171717;
+        }
+    }
+}
+
+// ========================
+// Smartphone
+// ========================
+@media (max-width: 768px) {
+
+    .contact {
+        padding: 50px 0 70px;
+    }
+
+    .contact .section-title {
+        font-size: 28px;
+        margin-bottom: 40px;
+    }
+
+    .contact-inner {
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .contact-text {
+        width: 100%;
+        flex: none;
+
+        p {
+            font-size: 14px;
+            line-height: 1.7;
+        }
+    }
+
+    .contact-form {
+        width: 100%;
+        flex: none;
+
+        label {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            font-size: 14px;
+            padding: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"] {
+            height: 44px;
+        }
+
+        textarea {
+            height: 120px;
+        }
+    }
+
+    .submit-btn {
+        margin-top: 30px;
+
+        input[type="submit"] {
+            width: 100%;
+            padding: 14px 0;
+            font-size: 14px;
+        }
+    }
+}

@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8">
+    <!-- 1. タイトルをアーカイブ用に変更 -->
+    <title>JUN | TRAVEL ARCHIVES - NOMAD JOURNAL</title>
+    <meta name="description" content="テキストテキストテキストテキストテキストテキスト">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="img/favicon.png">
+    <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Madimi+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- トップページに戻るボタン -->
+    <header id="header">
+        <nav class="navigation-menu">
+            <ul>
+                <li>
+                    <a href="index.html">← BACK TO TOP</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- 6月アーカイブ専用セクション -->
+        <section class="archive-detail">
+
+            <h1 class="section-title">TRAVEL ARCHIVES</h1>
+            <h2 class="archive-detail-month">JUN 2026</h2>
+
+            <div class="archive-calendar">
+                <ul class="archive-calendar-weekdays">
+                    <li>SUN</li>
+                    <li>MON</li>
+                    <li>TUE</li>
+                    <li>WED</li>
+                    <li>THU</li>
+                    <li>FRI</li>
+                    <li>SAT</li>
+                </ul>
+
+                <!-- カレンダーエリア -->
+
+                <ul class="calendar-grid">
+
+                    <!-- 1日目より前が何曜日から始まるかに合わせて、空のマスを先に入れる場合はここに追加 -->
+                    <li class="calendar-day empty"></li> <!-- 空白マス -->
+
+                    <!-- calendar-day:1マス全体の大きさ・位置を決める箱 -->
+                    <li class="calendar-day" date-img="img/day01.webp">
+                        <!-- .day-inner:実際にくるっと回転する本体(表と裏、両方を内包) -->
+                        <div class="day-inner">
+                            <!-- .day-front / .day-back:表面と裏面、それぞれの中身 -->
+                            <div class="day-front">1</div>
+                            <div class="day-back">
+                                <img src="img/day01.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <!-- 他の日付も同様に繰り返し -->
+                    <li class="calendar-day" date-img="img/day02.webp">
+                        <div class="day-inner">
+                            <div class="day-front">2</div>
+                            <div class="day-back">
+                                <img src="img/day02.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">3</div>
+                            <div class="day-back">
+                                <img src="img/day03.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">4</div>
+                            <div class="day-back">
+                                <img src="img/day04.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">5</div>
+                            <div class="day-back">
+                                <img src="img/day05.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">6</div>
+                            <div class="day-back">
+                                <img src="img/day06.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">7</div>
+                            <div class="day-back">
+                                <img src="img/day07.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">8</div>
+                            <div class="day-back">
+                                <img src="img/day08.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">9</div>
+                            <div class="day-back">
+                                <img src="img/day09.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">10</div>
+                            <div class="day-back">
+                                <img src="img/day10.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">11</div>
+                            <div class="day-back">
+                                <img src="img/day11.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">12</div>
+                            <div class="day-back">
+                                <img src="img/day12.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">13</div>
+                            <div class="day-back">
+                                <img src="img/day13.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">14</div>
+                            <div class="day-back">
+                                <img src="img/day14.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">15</div>
+                            <div class="day-back">
+                                <img src="img/day15.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">16</div>
+                            <div class="day-back">
+                                <img src="img/day16.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">17</div>
+                            <div class="day-back">
+                                <img src="img/day17.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">18</div>
+                            <div class="day-back">
+                                <img src="img/day18.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">19</div>
+                            <div class="day-back">
+                                <img src="img/day19.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">20</div>
+                            <div class="day-back">
+                                <img src="img/day20.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">21</div>
+                            <div class="day-back">
+                                <img src="img/day21.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">22</div>
+                            <div class="day-back">
+                                <img src="img/day22.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">23</div>
+                            <div class="day-back">
+                                <img src="img/day23.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">24</div>
+                            <div class="day-back">
+                                <img src="img/day24.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front"></div>
+                            <div class="day-back">
+                                <img src="img/day25.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front"></div>
+                            <div class="day-back">
+                                <img src="img/day26.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">27</div>
+                            <div class="day-back">
+                                <img src="img/day27.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">28</div>
+                            <div class="day-back">
+                                <img src="img/day28.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">29</div>
+                            <div class="day-back">
+                                <img src="img/day29.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                    <li class="calendar-day">
+                        <div class="day-inner">
+                            <div class="day-front">30</div>
+                            <div class="day-back">
+                                <img src="img/day30.webp" alt="">
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="archive-day">
+                <!-- 上部:タイムライン -->
+                <div class="day-timeline">
+
+                    <div class="timeline-track"> <!-- タイムライン全体  -->
+
+                        <div class="timeline-heart" id="timelineHeart">
+                            <img src="img/arrow-through-heart.svg" alt="ハートの矢">
+                        </div>
+
+                        <div class="timeline-times"> <!-- 時刻  -->
+                            <span class="time-label">5am</span>
+                            <span class="timeline-line"></span>
+
+                            <span class="time-label">12pm</span>
+                            <span class="timeline-line"></span>
+
+                            <span class="time-label">9pm</span>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- 操作ヒント -->
+    <p class="drag-guide">
+        drag through the day ♡
+        <span aria-hidden="true">→</span>
+    </p>
+
+                <!-- 下部:横並びの写真カード -->
+                <div class="day-photos swiper js-launchSlider">
+
+                    <ul class="swiper-wrapper">
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo01.webp" alt="">
+                        </li>
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo02.webp" alt="">
+                        </li>
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo03.webp" alt="">
+                        </li>
+
+                        <li class="day-photo-card day-photo-card--text swiper-slide">
+                            <img src="img/day-photo04.webp" alt="">
+                            <p>
+                                The thing that I was sooooo happy..♡
+                                念願だったRAUのPâtisserieに♡全てがアート!
+                            </p>
+                        </li>
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo05.webp" alt="">
+                        </li>
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo06.webp" alt="">
+                        </li>
+
+                        <li class="day-photo-card swiper-slide">
+                            <img src="img/day-photo07.webp" alt="">
+                        </li>
+
+                    </ul>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+    <!-- 共通のフッター -->
+    <footer class="footer">
+        <small class="copyright">&copy;JUN2026</small>
+    </footer>
+
+    <!-- 共通のスクリプト -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

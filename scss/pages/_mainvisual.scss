@@ -1,0 +1,339 @@
+// 共通設定
+.mainvisual {
+    width: 100%;
+    position: relative; // 子要素（円やポラロイド）を絶対配置するため
+    //tickerを作ると<section>に対してtickerが長くなり右側に変なmarginが作られてしまう。
+    //そのため<section class="mainvisual">に対してoverflow-x: hidden; を入れてはみ出したものを見えないようにする。
+    overflow-x: hidden; 
+    &-inner {
+        max-width: 1920px;
+        margin: 0 auto;
+        position: relative;
+        height: 100vh;
+    }
+
+    &-circle {
+        // 円の装飾パーツ用
+        position: absolute;
+        /* ★自由な場所に配置できるようにする */
+        top: 11.31%;
+        /* Figmaに合わせて上からの位置を調整 */
+        left: 8.54%;
+        /* Figmaに合わせて左からの位置を調整 */
+        width: 273px;
+        /* ★円全体の大きさを指定（小さくしたければここを調整） */
+        //height: 200px;
+        animation: spin 20s linear infinite; // 20秒で1周、ゆっくり回す
+
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        text {
+            fill: black;
+            /* 文字の色（黒） */
+            font-size: 14px;
+            /* 文字の大きさ */
+            font-weight: bold;
+            letter-spacing: 2px;
+            /* 文字と文字の間隔を少し広げると綺麗に見えます */
+        }
+    }
+
+    &-title {
+        position: absolute;
+        font-size: 180px;
+        color: black;
+        letter-spacing: 10%;
+        top: 46.66%;
+        left: 6.18%;
+        width: 948px;
+    }
+
+    &-subtitle {
+        position: absolute;
+        font-size: 80px;
+        color: black;
+        letter-spacing: 10%;
+        font-weight: bold;
+        color: transparent;
+        /* 文字自体は透明にする */
+        background-image: url('../img/journey.webp');
+        background-size: cover;
+        background-position: center;
+        -webkit-background-clip: text;
+        /* 文字の形で背景をくり抜く */
+        background-clip: text;
+        top: 69.33%;
+        left: 28.44%;
+    }
+
+    &-ticker {
+        // 横スクロールアニメーション
+        position: absolute;
+        top: 85.36%;
+        display: flex; //<li>は何も指定しないと縦並びになってしまうため横並びにさせること   
+        white-space: nowrap; //文字の折り返しなし
+        animation: ticker 50s linear infinite;
+        //上記の説明：
+        //ticker→下記の @keyframes ticker という「動きのレシピ」を使うよという名前
+        //20s → 1周するのに20秒という時間 
+        //linear → 動きの速さを 最初から最後まで同じ速さにする
+        //infinite → ずっと繰り返す(1回で止まらない) //
+
+        li {
+            //flex-shrink: 0; → 「画面が狭くなっても、この文字を勝手に縮めないでね」という指示
+            //padding-right: 20px; → 「右側に20pxのすきまを空けてね」という指示(文章と文章がくっつかないように)
+            flex-shrink: 0;
+            padding-right: 20px;
+        }
+    }
+}
+
+
+//.mainvisual-circleのanimation: spin 15s linear infinite;　spinから呼び出される
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+// @keyframes tickerは上記のanimation: tickerから呼び出される
+@keyframes ticker {
+    0% {
+        transform: translateX(0); //動き始め(0%地点)では、横方向に 0(動かさない) の位置にいてね」という意味→つまりスタート地点
+    }
+
+    100% {
+        transform: translateX(-50%); //動き終わり(100%地点)では、横方向に自分の幅の50%ぶん左に移動してねという意味
+        //-50% の意味は「マイナス(左に)、自分の幅の半分だけ」ということ
+        //ちなみにhtmlでは座標のところを<li>が同じ内容を敢えて2つ並べている。
+        //その意味として、translateX(-50%) でちょうど1周分動いた時に、次の <li> が同じ位置に来てシームレスに見える
+    }
+}
+
+
+
+// ポラロイド風の画像エリア
+.polaroid {
+    position: absolute; //この箱を、決まった場所にピタッと固定して置くよという指示
+    top: 0; //置く場所の基準は、親の箱の 一番上・一番左 にするよという意味
+    left: 0;
+    width: 100%; //この箱の大きさを親の箱と同じ大きさ(幅も高さも100%)にするよという意味..polaroid は親要素(.mainvisual-innerなど)いっぱいに広がる
+    height: 100%;
+
+    //imgのところにもabsoluteが入っているため本当にこのimgが必要なのかどうか確認 
+    img {
+        border: 8px solid #FFFFFF; //写真の白い縁の部分
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        width: 100%;
+    }
+
+
+    //写真入れる時はhtmlはliの中(この場合.polaroid01)にclassを作成し、その中にimgをあてること!
+    //ATTN::afterwidthなどはliで変更させる/heightや丸くするなどはimgに直接当てる
+    .polaroid01 {
+        /* 1枚目の配置 */
+        position: absolute;
+        top: 16.95%; //top(%) = FigmaでのY座標 ÷ Figmaフレームの幅(現在1440) × 100
+        left: 19.1%; //left(%) = FigmaでのX座標 ÷ Figmaフレームの幅(現在1440) × 100
+        transform: rotate(25.61deg); //25.61degは時計回りに25.61度(※ちなみに-マイナスを付けると左方向)
+        width: 238px;
+
+        img {
+            height: 288px;
+        }
+    }
+
+    //下記、.polaroid02 の書き方が正解のため他を全てこのように書き換えること！（授業より）
+    .polaroid02 {
+        /* 2枚目の配置 */
+        position: absolute;
+        top: 16%;
+        left: 46.1%;
+        transform: rotate(-18.74deg);
+        width: 170px;
+
+        img {
+            height: 179px;
+        }
+    }
+
+    .polaroid03 {
+        position: absolute;
+        /* 3枚目の配置 */
+        top: 14.72%;
+        left: 56.45%;
+        transform: rotate(22.39deg);
+        width: 153px;
+
+        img {
+            height: 172px;
+        }
+    }
+
+    .polaroid04 {
+        /* 4枚目の配置 */
+        position: absolute;
+        top: 13.33%;
+        left: 76.38%;
+        transform: rotate(22.08deg);
+        width: 156px;
+
+        img {
+            height: 139px;
+        }
+    }
+
+    .polaroid05 {
+        /* 4枚目の配置 */
+        position: absolute;
+        top: 29.09%;
+        left: 74.30%;
+        transform: rotate(-8.21deg);
+        width: 244px;
+
+        img {
+            height: 251px;
+        }
+    }
+
+    .polaroid06 {
+        /* 4枚目の配置 */
+        position: absolute;
+        top: 38.95%;
+        left: 35.34%;
+        width: 550px;
+
+        img {
+            height: 263px;
+        }
+    }
+}
+
+.tagline {
+    position: absolute;
+    font-size: 24px;
+    top: 73.73%; //この部分のtopとleftも上記の.polaroidと同じくFigmaでのXY座標 ÷ Figmaフレームの幅(現在1440) × 100の計算式
+    left: 67.98%;
+}
+
+// ========================
+// Smartphone
+// ========================
+@media (max-width: 768px) {
+
+    .mainvisual {
+
+        &-inner {
+            aspect-ratio: auto;
+            height: 550px;
+        }
+
+        &-title {
+            text-align: center;
+            font-size: 77px;
+            width: auto;
+            line-height: 0.95;
+        }
+
+        &-subtitle {
+            text-align: center;
+            font-size: 42px;
+            top: 63%;
+            left: 15%;
+        }
+
+        &-circle {
+            width: 150px;
+            top: 8%;
+            left: 5%;
+        }
+
+        &-ticker {
+            top: 87%;
+            font-size: 12px;
+        }
+    }
+
+
+    .polaroid {
+
+        img {
+            border-width: 4px;
+        }
+
+        .polaroid01 {
+            width: 112px;
+            top: 12%;
+            left: 20%;
+
+            img {
+                height: 115px;
+            }
+        }
+
+        .polaroid02 {
+            width: 90px;
+            top: 18%;
+            left: 48%;
+
+            img {
+                height: 95px;
+            }
+        }
+
+        .polaroid03 {
+            width: 100px;
+            top: 10%;
+            left: 65%;
+
+            img {
+                height: 110px;
+            }
+        }
+
+        .polaroid04 {
+            width: 90px;
+            top: 27%;
+            left: 78%;
+
+            img {
+                height: 80px;
+            }
+        }
+
+        .polaroid05 {
+            width: 80px;
+            top: 35%;
+            left: 64%;
+
+            img {
+                height: 90px;
+            }
+        }
+
+        .polaroid06 {
+            width: 220px;
+            top: 54%;
+            left: 60%;
+
+            img {
+                height: 100px;
+            }
+        }
+    }
+
+
+    .tagline {
+        top: 76%;
+        left: 60%;
+        font-size: 12px;
+    }
+}

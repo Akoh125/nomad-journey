@@ -1,0 +1,19 @@
+//common//
+@use "common/mixin";
+@use "common/common";
+
+//layout//
+@use "layout/header";
+@use "layout/navigation";
+@use "layout/footer";
+@use "layout/loading";
+
+//pages//
+@use "pages/mainvisual";
+@use "pages/travel-style";
+@use "pages/news";
+@use "pages/archives";
+@use "pages/gallery";
+@use "pages/contact";
+@use "pages/animation";
+@use "pages/slick";

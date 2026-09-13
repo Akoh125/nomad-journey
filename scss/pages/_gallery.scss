@@ -1,0 +1,810 @@
+.navigation-menu {
+
+    ul {
+        padding: 50px 50px 0px 0px;
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
+        gap: 15px;
+
+        li {
+            background-color: #D9D9D9;
+            box-sizing: border-box;
+            border-radius: 32px;
+
+            a {
+                display: block; //ピルの形の部分を全てクリックできるようにaタグにdisplay: blockさせる
+                padding: 16px;
+                font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+                font-weight: bold;
+                font-size: 16px;
+                color: black;
+            }
+        }
+    }
+}
+
+
+//.archive-jun.html(6月のアーカイブ)
+.archive-calendar {
+    max-width: 1000px; // Figmaのカレンダー全体の幅に合わせて調整
+    margin: 0 auto;
+
+    &-weekdays {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr); // 曜日も同じ7列にして、日付と縦に揃える
+        text-align: center;
+        font-weight: bold;
+        max-width: 1000px;
+        margin: 0 auto;
+        margin-block: 30px;
+
+        li {
+            font-size: 16px;
+        }
+    }
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr); // 7列(日〜土)
+    gap: 16px;
+}
+
+.calendar-day {
+    aspect-ratio: 1 / 1; // 正方形をキープ
+    perspective: 1000px;
+}
+
+.calendar-day.empty {
+    visibility: hidden; // マスの場所は保持するが、見た目は消す
+}
+
+.day-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.calendar-day:hover .day-inner {
+    transform: rotateY(180deg);
+}
+
+.day-front,
+.day-back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-front {
+    background-color: #d9d9d9;
+    font-size: 20px;
+}
+
+.day-back {
+    background-color: #d9d9d9; // 写真がない日のデフォルト色
+    transform: rotateY(180deg);
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+//上部:タイムライン
+.archive-day {
+    padding: 100px 40px;
+}
+
+.day-timeline {
+    max-width: 900px;
+    margin: 0 auto 60px;
+
+    .timeline-track {
+        position: relative;
+        width: 100%;
+    }
+
+    .timeline-times {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .time-label {
+            font-weight: bold;
+            font-size: 20px;
+            white-space: nowrap;
+        }
+
+        .timeline-line {
+            flex: 1; // 時刻ラベルの間を線で埋める
+            height: 1px;
+            background-color: #333;
+            margin: 0 16px;
+        }
+    }
+}
+
+.drag-guide {
+    max-width: 900px;
+    margin: 0 auto 12px;
+
+    text-align: right;
+
+    font-size: 16px;
+    letter-spacing: 0.08em;
+    opacity: 0.70;
+    transition: opacity 0.5s ease;
+}
+
+.drag-guide.is-hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+// //ハートの矢のドラッグスクロール部分
+.timeline-heart {
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    width: 48px;
+    height: 48px;
+
+    transform: translate(-50%, -50%);
+
+    cursor: grab;
+    touch-action: none;
+    user-select: none;
+
+    z-index: 10;
+
+    img {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        // ★かなり重要
+        pointer-events: none;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    &.is-dragging {
+        cursor: grabbing;
+    }
+}
+
+// 下部:横並びの写真カード
+.day-photos {
+    scroll-behavior: smooth; // JSで位置を動かしたときになめらかに見せる
+}
+
+.day-photo-card {
+    // flex-shrink: 0; // 画面が狭くなっても縮まないようにする
+    width: 220px; // カード1枚の幅
+    border-radius: 32px;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        height: 320px;
+        object-fit: cover;
+        vertical-align: bottom;
+    }
+
+    // 画像とテキストのカード
+    // 画像とテキストのカードの場合、.day-photo-card--textにして個別にcssをあてている
+    &--text {
+        display: grid;
+        align-items: center;
+
+        img,
+        p {
+            grid-area: 1 / 1; //Gridの1行目・1列目に置く
+        }
+
+        p {
+            font-size: 15px;
+            font-weight: bold;
+            line-height: 1.6;
+            align-self: center; //文字をカードの縦方向の中央に置く
+            justify-self: center; //文字を横方向の中央に置く
+            width: 70%;
+            z-index: 1; //文字を上・画像を下のためpにz-indexをあてる
+        }
+    }
+}
+//================================
+//.archive-may.html(5月のアーカイブ)
+//================================
+// ポイント: 
+//.archive-collage(ulで全体):hover → 7枚全体を扇状に広げる
+//.collage-item:hover(liで画像1枚ずつ) → その1枚を一番手前に出す
+// ① flexで普通に並べる
+//         ↓
+// ② flex-shrink: 0 で縮ませない
+//         ↓
+// ③ transformで写真を中央に寄せて重ねる
+//         ↓
+// ④ 親:hoverでtransformを変更
+//         ↓
+// ⑤ transitionで滑らかに広げる
+
+
+
+.archive-collage {
+    // height: 700px;と
+    // align-items: center;をあてていたが不要
+    margin: 0 auto;
+    display: flex;  //display: flex;とjustify-content: centerで画像全体を横並びに
+    justify-content: center;
+
+// ========================
+// hover時 扇状に大きく広げる
+// アルバム全体にマウスを乗せたとき/以下のように設定
+// .archive-collage {
+//     &:hover {
+//         .item01 {
+//         transform: translate(240px, 90px) rotate(-24deg);
+// }
+// ========================
+    &:hover {
+        .item01 {
+            transform: translate(240px, 90px) rotate(-24deg);
+        }
+
+        .item02 {
+            transform: translate(170px, 35px) rotate(-16deg);
+        }
+
+        .item03 {
+            transform: translate(90px, -10px) rotate(-8deg);
+        }
+
+        .item04 {
+            transform: translate(0, -35px) rotate(0deg);
+        }
+
+        .item05 {
+            transform: translate(-90px, -10px) rotate(8deg);
+        }
+
+        .item06 {
+            transform: translate(-170px, 35px) rotate(16deg);
+        }
+
+        .item07 {
+            transform: translate(-240px, 90px) rotate(24deg);
+        }
+    }
+}
+
+// 1画像ずつ共通部分
+.collage-item {
+    flex-shrink: 0; //写真が横幅に合わせて勝手に縮まないようするため
+    transition: all 0.5s ease; //liにhoverする前にtransitionをつける必要(ulにつけない)
+
+
+    img {
+        height: 400px;
+        box-shadow: 0 12px 24px rgba(71, 68, 68, 0.2);
+        border-radius: 16px;
+        border: 6px solid beige;
+        // transition: transform 0.5s cubic-bezier(0.2, .9, .3, 1.2);
+    }
+
+    // ========================
+    // 通常時
+    // 左右少しずつズラして重ねる
+    //.item01 → 右へ360px
+    //.item02 → 右へ240px
+    // .item03 → 右へ120px
+    // .item04 → 動かさない (中心にする)
+    // .item05 → 左へ120px
+    // .item06 → 左へ240px
+    // .item07 → 左へ360px
+    // ========================
+
+    &.item01 {
+        transform: translate(360px, 40px) rotate(-12deg);
+        z-index: 1;
+    }
+
+    &.item02 {
+        transform: translate(240px, 20px) rotate(-8deg);
+        z-index: 2;
+    }
+
+    &.item03 {
+        transform: translate(120px, 5px) rotate(-4deg);
+        z-index: 3;
+    }
+
+    &.item04 {
+        transform: translate(0, 0) rotate(0deg);
+        z-index: 4;
+    }
+
+    &.item05 {
+        transform: translate(-120px, 5px) rotate(4deg);
+        z-index: 5;
+    }
+
+    &.item06 {
+        transform: translate(-240px, 20px) rotate(8deg);
+        z-index: 6;
+    }
+
+    &.item07 {
+        transform: translate(-360px, 40px) rotate(12deg);
+        z-index: 7;
+    }
+
+// 以下item01-07の役割：1枚の写真そのものにマウスを乗せたとき、その写真を一番前に出す処理
+// .collage-item {
+//     &:hover {
+//         &.item01 {
+//             z-index: 10;
+//         }
+
+    &:hover {
+        animation: item .5s forwards ease;
+
+        &.item01 {
+            z-index: 10;
+        }
+
+        &.item02 {
+            z-index: 10;
+        }
+
+        &.item03 {
+            z-index: 10;
+        }
+
+        &.item04 {
+            z-index: 10;
+        }
+
+        &.item05 {
+            z-index: 10;
+        }
+
+        &.item06 {
+            z-index: 10;
+        }
+
+        &.item07 {
+            z-index: 10;
+        }
+    }
+}
+
+@keyframes item {
+    0%{
+        opacity: 0;
+    }
+
+    100%{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+//4月アーカイブ
+.archive-animation-box {
+    position: relative;
+    width: 100%;
+    height: 1000px; // 雲が浮かぶ範囲の高さ
+}
+
+.cloud-photo-wrap {
+    position: absolute; // 自由な位置に置けるようにする
+    width: 300px; // 雲1つの大きさ
+}
+
+.cloud-mask {
+    width: 100%;
+    aspect-ratio: 1 / 1; // SVGの縦横比に合わせて調整
+    -webkit-mask-image: url('../img/clouds.svg');
+    mask-image: url('../img/clouds.svg');
+    -webkit-mask-size: contain;
+    mask-size: contain;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+// 雲それぞれの配置と、ぷかぷかアニメーション
+.cloud--01 {
+    top: 15%;
+    left: 2%;
+    animation: float 6s ease-in-out infinite; //6秒かけてゆっくり動く
+}
+
+.cloud--02 {
+    top: 5%;
+    left: 18%;
+    animation: float 3s ease-in-out infinite;
+    animation-delay: 0.8s; //少しずらす
+}
+
+.cloud--03 {
+    top: 12%;
+    left: 35%;
+    animation: float 5.5s ease-in-out infinite;
+    animation-delay: 1s;
+}
+
+.cloud--04 {
+    top: 10%;
+    left: 58%;
+    animation: float 6.5s ease-in-out infinite;
+    animation-delay: 1.5s;
+}
+
+.cloud--05 {
+    top: 6%;
+    left: 72%;
+    animation: float 7.5s ease-in-out infinite;
+    animation-delay: 2s;
+}
+
+.cloud--06 {
+    top: 67%;
+    left: 10%;
+    animation: float 6s ease-in-out infinite;
+    animation-delay: 2.5s;
+}
+
+.cloud--07 {
+    top: 52%;
+    left: 32%;
+    animation: float 7s ease-in-out infinite;
+    animation-delay: 3s;
+}
+
+.cloud--08 {
+    top: 80%;
+    left: 42%;
+    animation: float 5.5s ease-in-out infinite;
+    animation-delay: 0.8s;
+}
+
+.cloud--09 {
+    top: 55%;
+    left: 60%;
+    animation: float 6.8s ease-in-out infinite;
+    animation-delay: 1.8s;
+}
+
+.cloud--10 {
+    top: 50%;
+    left: 75%;
+    animation: float 7.2s ease-in-out infinite;
+    animation-delay: 2.3s;
+}
+
+// 「ぷかぷか」浮かぶ動き
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(60px, -20px); // 右に10px、上に20px
+    }
+}
+
+
+
+//.archive-mar.html(3月のアーカイブ)
+
+// 写真12枚が回るための600px × 600pxの円全体
+.archive-photo-ring {
+    width: 700px;
+    height: 700px;
+    margin: 150px auto 0; // ← 上に150px余白を追加
+    position: relative;
+}
+
+// 12枚をまとめて回転させる部分
+.photo-ring {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: rotate-ring 30s linear infinite; //rotate-ring→ アニメーションの名前  30s→ 1周30秒 linear→ 一定速度 infinite→ 永遠に繰り返す
+}
+
+.march-photo-card {
+    width: 200px;
+    position: absolute; //absoluteで好きな位置に配置
+    top: 50%; //top50%とleft50%で全ての画像を真ん中に持ってきている→ そのあとにtransform: rotate(deg) translateX(px);をあてて中心から外側に飛ばして円を作っている
+    left: 50%;
+    transform-origin: 0 0; //transformするときの基準点をどこにするか 横方向 0 縦方向 0のため要素の左上が基準
+
+    img {
+        width: 100%;
+        height: 150px;
+        transition: //transitionによって大きさと影を0.4秒かけてふわっと拡大
+            transform 0.4s ease,
+            box-shadow 0.4s ease;
+        animation: rotate-photo 30s linear infinite;
+    }
+
+    &:hover {
+        z-index: 13;
+
+        img {
+            transform: scale(1.4); //ホバーすると1.4倍になる
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+// 12枚を円形に配置
+.march-photo-card:nth-child(1) {
+    transform: rotate(0deg) translateX(230px);
+}
+
+.march-photo-card:nth-child(2) {
+    transform: rotate(30deg) translateX(218px);
+}
+
+.march-photo-card:nth-child(3) {
+    transform: rotate(60deg) translateX(238px);
+}
+
+.march-photo-card:nth-child(4) {
+    transform: rotate(90deg) translateX(225px);
+}
+
+.march-photo-card:nth-child(5) {
+    transform: rotate(120deg) translateX(242px);
+}
+
+.march-photo-card:nth-child(6) {
+    transform: rotate(150deg) translateX(220px);
+}
+
+.march-photo-card:nth-child(7) {
+    transform: rotate(180deg) translateX(235px);
+}
+
+.march-photo-card:nth-child(8) {
+    transform: rotate(210deg) translateX(222px);
+}
+
+.march-photo-card:nth-child(9) {
+    transform: rotate(240deg) translateX(240px);
+}
+
+.march-photo-card:nth-child(10) {
+    transform: rotate(270deg) translateX(226px);
+}
+
+.march-photo-card:nth-child(11) {
+    transform: rotate(300deg) translateX(236px);
+}
+
+.march-photo-card:nth-child(12) {
+    transform: rotate(330deg) translateX(220px);
+}
+
+
+// 写真サイズにも少しばらつきをつける
+.march-photo-card:nth-child(3n) {
+    width: 135px;
+    height: 135px;
+}
+
+.march-photo-card:nth-child(4n) {
+    width: 110px;
+    height: 110px;
+}
+
+// ホバーしたら回転を止める
+.photo-ring:hover {
+    animation-play-state: paused;
+
+    .photo-card img {
+        animation-play-state: paused;
+    }
+}
+
+// 全体を回す
+@keyframes rotate-ring {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+// 画像だけ逆方向に回す
+@keyframes rotate-photo {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+//3月archiveのまとめ
+// .archive-photo-ringで600px四方の全体の領域を作っている
+// その中に.photo-ringを作って、12枚の写真全体をアニメーションで回転
+// 各写真の.march-photo-cardはposition: absoluteにして、親の中央を基準に自由に配置。そこからrotateとtranslateXを使って12枚を円状に配置。
+// リング全体を回すと写真自体も傾いてしまうので、画像には逆方向の回転アニメーションを付けて向きを補正
+// 写真をホバーしたときはscale(1.4)で拡大し、z-indexで前面に出して、transitionでふわっと大きく。
+
+
+// ========================
+// Calendar
+// ========================
+@media (max-width: 768px) {
+
+    .navigation-menu {
+        // ul {
+        //     padding: 20px 0px 0 0;
+        // }
+
+        li {
+            a {
+                padding: 10px 14px;
+                font-size: 10px;
+            }
+        }
+    }
+
+    .archive-calendar {
+        padding: 0 12px;
+    }
+
+    .calendar-grid {
+        gap: 5px;
+    }
+
+    .archive-calendar-weekdays {
+        margin-bottom: 10px;
+    }
+
+    .archive-calendar-weekdays li {
+        font-size: 11px;
+    }
+
+    .day-front {
+        font-size: 12px;
+    }
+
+
+    // ========================
+    // Day Timeline / Swiper
+    // ========================
+
+    .archive-day {
+        padding: 60px 20px;
+    }
+
+    .day-timeline {
+        margin-bottom: 40px;
+    }
+
+    .day-timeline .timeline-times .time-label {
+        font-size: 12px;
+    }
+
+    .day-timeline .timeline-times .timeline-line {
+        margin: 0 8px;
+    }
+
+    .timeline-heart {
+        width: 32px;
+        height: 32px;
+    }
+
+    .day-photo-card {
+        width: 160px;
+        border-radius: 24px;
+    }
+
+    .day-photo-card img {
+        height: 230px;
+    }
+
+    .collage-item {
+        width: 160px;
+
+        img {
+            height: 180px;
+        }
+    }
+}
+
+// ========================
+// Smartphone(4月)
+// ========================
+@media (max-width: 768px) {
+
+    .archive-animation-box {
+        height: 900px; // スマホでは縦長にする
+        overflow: hidden; // 横にはみ出した雲を隠す
+    }
+
+    .cloud-photo-wrap {
+        width: 170px; // PCの300pxから小さくする
+    }
+
+    .cloud--01 {
+        top: 4%;
+        left: 5%;
+    }
+
+    .cloud--02 {
+        top: 8%;
+        left: 58%;
+    }
+
+    .cloud--03 {
+        top: 22%;
+        left: 12%;
+    }
+
+    .cloud--04 {
+        top: 28%;
+        left: 55%;
+    }
+
+    .cloud--05 {
+        top: 40%;
+        left: 33%;
+    }
+
+    .cloud--06 {
+        top: 46%;
+        left: 48%;
+    }
+
+    .cloud--07 {
+        top: 59%;
+        left: 8%;
+    }
+
+    .cloud--08 {
+        top: 65%;
+        left: 57%;
+    }
+
+    .cloud--09 {
+        top: 78%;
+        left: 24%;
+    }
+
+    .cloud--10 {
+        top: 82%;
+        left: 50%;
+    }
+}

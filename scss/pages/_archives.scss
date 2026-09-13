@@ -1,0 +1,475 @@
+            .archives {
+                text-align: center;
+                overflow-x: hidden;
+
+                &-section-copy {
+                    text-align: center;
+                    font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+                    font-weight: bold;
+                    font-size: 24px;
+                    margin-top: 100px;
+                    margin-bottom: 40px;
+                    color: black;
+                }
+
+                &-section-title {
+                    text-align: center;
+                    font-family: 'Madimi One', sans-serif; //フォント名はクォーテーションで囲む
+                    font-size: 36px;
+                    margin-bottom: 20px;
+                }
+
+                &-date {
+                    font-family: 'Font Awesome 5 Free';
+                    font-weight: bold;
+                    text-align: center;
+                    padding: 24px;
+                }
+
+                &-album {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                &-inner {
+                    position: relative;
+
+                }
+
+                &-bg {
+                    display: block;
+                    // height: 100%;
+                }
+
+                &-grid {
+                    position: absolute;
+                    display: grid;
+                    grid-template-columns: 2fr 2fr;
+                    transform: translate(-55%, -50%) rotate(-10deg);
+                    border-radius: 5px;
+                    gap: 15px;
+                    top: 50%;
+                    left: 50%;
+                    width: 600px;
+                    z-index: 1;
+                }
+
+                &-card {
+                    background-color: rgb(241, 236, 230);
+                    border-radius: 10px;
+                    box-shadow: 9px 4px 4px rgb(143, 138, 138);
+                    padding: 16px;
+                }
+
+                &-jun-flame {
+                    border-radius: 10px;
+                    background: -webkit-repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px, #e9f4ff 3px, #e9f4ff 7px);
+                    background: repeating-linear-gradient(-45deg, #f0f8ff, #f0f8ff 3px, #e9f4ff 3px, #24374a 7px);
+                    width: 220px;
+                    height: 300px;
+                    margin: 20px;
+                    position: relative;
+                }
+
+
+                &-photos-jun {
+                    display: flex;
+                    justify-content: center;
+
+                    li {
+                        width: 100px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100px;
+                        border: 3px solid rgb(226, 220, 245);
+                        box-shadow: 2px 2px 4px rgb(237, 237, 214);
+                        border-radius: 50%;
+
+                    }
+                }
+
+                &-photos-jun li:nth-child(1) {
+                    z-index: 2;
+                }
+
+                &-photos-jun li:nth-child(2) {
+                    z-index: 1;
+                    margin-top: 50%;
+                }
+
+
+                &-may-flame {
+                    border-radius: 10px;
+                    background-color: #ACBCAA;
+                    width: 220px;
+                    height: 300px;
+                    margin: 20px;
+                    position: relative;
+                }
+
+                &-photos-may {
+                    width: 180px;
+                    position: absolute;
+                    top: 50px;
+                    left: 20px;
+
+                    img {
+                        width: 100%;
+                        height: 220px;
+                        border: 3px solid beige;
+                        box-shadow: 2px 2px 4px rgb(237, 237, 214);
+                        border-radius: 20px;
+                    }
+                }
+
+                &-apr-flame {
+                    border-radius: 15px;
+                    background-color: #aeaaba;
+                    width: 220px;
+                    margin: 20px;
+                    height: 300px;
+                    position: relative;
+                }
+
+                &-photos-apr {
+                    display: flex;
+                    justify-content: center;
+
+                    li {
+                        width: 50%;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 100px;
+                        border: 3px solid beige;
+                        box-shadow: 2px 2px 4px rgb(237, 237, 214);
+                        border-radius: 20px;
+                    }
+                }
+
+                &-photos-apr li:nth-child(1) {
+                    z-index: 2;
+                }
+
+                &-photos-apr li:nth-child(2) {
+                    z-index: 1;
+                    margin-left: -20px;
+                    margin-top: 20px;
+                }
+
+
+                //文字の位置を決めるcssをあてること
+                &-apr-text {
+                    padding-block: 10px;
+                    padding-inline: 40px;
+                    font-size: 12px;
+                }
+
+
+                &-mar-flame {
+                    border-radius: 15px;
+                    background-color: #93877B;
+                    width: 220px;
+                    height: 300px;
+                    margin: 20px;
+                    position: relative;
+                }
+
+                &-photos-mar {
+
+                    li {
+                        position: absolute;
+                        width: 100px;
+                    }
+
+                    img {
+                        width: 100%;
+                        height: 120px;
+                        border-radius: 20px;
+                        border: 3px solid beige;
+                        box-shadow: 2px 2px 4px rgb(237, 237, 214);
+                    }
+                }
+
+                &-photos-mar li:nth-child(1) {
+                    top: 130px;
+                    left: 15px;
+                    transform: rotate(-10deg);
+                    z-index: 3;
+                }
+
+                &-photos-mar li:nth-child(2) {
+                    top: 120px;
+                    left: 50px;
+                    transform: rotate(4deg);
+                    z-index: 2;
+                }
+
+                &-photos-mar li:nth-child(3) {
+                    top: 135px;
+                    right: 10px;
+                    transform: rotate(10deg);
+                    z-index: 1;
+                }
+
+                &-ticker {
+                    // 横スクロールアニメーション
+                    display: flex; //<li>は何も指定しないと縦並びになってしまうため横並びにさせること   
+                    white-space: nowrap; //文字の折り返しなし
+                    animation: ticker 50s linear infinite;
+                    //上記の説明：
+                    //ticker→下記の @keyframes ticker という「動きのレシピ」を使うよという名前
+                    //20s → 1周するのに20秒という時間 
+                    //linear → 動きの速さを 最初から最後まで同じ速さにする
+                    //infinite → ずっと繰り返す(1回で止まらない) //
+
+                    li {
+                        //flex-shrink: 0; → 「画面が狭くなっても、この文字を勝手に縮めないでね」という指示
+                        //padding-right: 20px; → 「右側に20pxのすきまを空けてね」という指示(文章と文章がくっつかないように)
+                        flex-shrink: 0;
+                        padding-right: 20px;
+                    }
+                }
+            }
+
+            // ========================
+            // Smartphone
+            // ========================
+            @media (max-width: 768px) {
+                .archives {
+
+                    // セクション上のコピー
+                    &-section-copy {
+                        font-size: 16px;
+                        margin-top: 60px;
+                        margin-bottom: 20px;
+                    }
+
+                    // セクションタイトル
+                    &-section-title {
+                        font-size: 28px;
+                        margin-bottom: 20px;
+                    }
+
+                    // アルバム全体
+                    &-album {
+                        position: relative;
+                        display: inline-block;
+                        width: 80%;
+                    }
+
+                    // 背景画像を基準にする
+                    &-inner {
+                        position: relative;
+                        margin: 0 auto;
+                        width: 100%;
+
+                        img {
+width: 100%;
+                        }
+                    }
+
+                    // アルバム背景画像
+                    &-bg {
+
+                        height: auto;
+                    }
+
+                    // 日付
+                    &-date {
+                        font-size: 11px;
+                        padding: 10px 4px;
+                    }
+
+                    // ========================
+                    // 4枚のカード
+                    // ========================
+
+                    &-grid {
+                        position: absolute;
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        width: 62%;
+                        gap: 6px;
+                        top: 50%;
+                        left: 50%;
+                        border-radius: 5px;
+                        z-index: 1;
+                    }
+
+                    &-card {
+                        padding: 6px;
+                        border-radius: 6px;
+                        // PCの影をスマホでは少し弱くする
+                        box-shadow: 4px 3px 4px rgb(143, 138, 138);
+                    }
+
+
+                    // ========================
+                    // JUN
+                    // ========================
+
+                    &-jun-flame {
+                        width: 120px;
+                        height: 160px;
+                        margin: 0 auto;
+                        border-radius: 7px;
+                        position: relative;
+                    }
+
+                    &-photos-jun {
+                        display: flex;
+                        justify-content: center;
+
+                        li {
+                            width: 48px;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 48px;
+                            border-width: 2px;
+                        }
+                    }
+
+                    &-photos-jun li:nth-child(1) {
+                        z-index: 2;
+                    }
+
+                    &-photos-jun li:nth-child(2) {
+                        z-index: 1;
+                        margin-top: 40%;
+                    }
+
+
+                    // ========================
+                    // MAY
+                    // ========================
+
+                    &-may-flame {
+                        width: 120px;
+                        height: 160px;
+                        margin: 0 auto;
+                        border-radius: 7px;
+                        position: relative;
+                    }
+
+                    &-photos-may {
+                        width: 96px;
+                        position: absolute;
+                        top: 35px;
+                        left: 12px;
+
+                        img {
+                            width: 100%;
+                            height: 110px;
+
+                            border-width: 2px;
+                            border-radius: 10px;
+                        }
+                    }
+
+
+                    // ========================
+                    // APR
+                    // ========================
+
+                    &-apr-flame {
+                        width: 120px;
+                        height: 160px;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                        position: relative;
+                    }
+
+                    &-photos-apr {
+                        display: flex;
+                        justify-content: center;
+
+                        li {
+                            width: 55px;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 55px;
+
+                            border-width: 2px;
+                            border-radius: 10px;
+                        }
+                    }
+
+                    &-photos-apr li:nth-child(1) {
+                        z-index: 2;
+                    }
+
+                    &-photos-apr li:nth-child(2) {
+                        z-index: 1;
+                        margin-left: -10px;
+                        margin-top: 10px;
+                    }
+
+                    &-apr-text {
+                        padding-block: 5px;
+                        padding-inline: 10px;
+                        font-size: 7px;
+                        line-height: 1.4;
+                    }
+
+
+                    // ========================
+                    // MAR
+                    // ========================
+
+                    &-mar-flame {
+                        width: 120px;
+                        height: 160px;
+                        margin: 0 auto;
+                        border-radius: 8px;
+                        position: relative;
+                    }
+
+                    &-photos-mar {
+
+                        li {
+                            position: absolute;
+                            width: 50px;
+                        }
+
+                        img {
+                            width: 100%;
+                            height: 60px;
+                            border-width: 2px;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    &-photos-mar li:nth-child(1) {
+                        top: 70px;
+                        left: 8px;
+                        transform: rotate(-10deg);
+                        z-index: 3;
+                    }
+
+                    &-photos-mar li:nth-child(2) {
+                        top: 65px;
+                        left: 35px;
+                        transform: rotate(4deg);
+                        z-index: 2;
+                    }
+
+                    &-photos-mar li:nth-child(3) {
+                        top: 72px;
+                        right: 5px;
+                        transform: rotate(10deg);
+                        z-index: 1;
+                    }
+
+                    &-ticker {
+                        font-size: 12px;
+                    }
+                }
+            }
