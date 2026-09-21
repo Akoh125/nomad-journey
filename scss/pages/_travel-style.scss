@@ -147,7 +147,8 @@
 
 
     &:hover &-left {
-        transform: translateX(-4px) rotate(-1deg);
+        transform: rotate(-1deg);
+        transform-origin: right bottom; 
     }
 
     &:hover &-right {

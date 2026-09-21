@@ -37,7 +37,7 @@ li {
   text-align: center;
   font-family: "Madimi One", sans-serif;
   font-size: 36px;
-  margin-bottom: 20px;
+  margin-block: 50px;
 }
 
 .archive-detail-month {
@@ -46,7 +46,7 @@ li {
   font-size: 24px;
 }
 
-.container {
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -106,7 +106,6 @@ li {
     /*position: fixed; top: 20px;right: 20px;で右上から20px位置固定*/
     right: 20px;
     z-index: 9999;
-    background-color: red;
   }
   /* ボタンの横線の長さと高さ(太さ) */
   .hamburger span {
@@ -189,6 +188,7 @@ li {
 }
 footer {
   text-align: center;
+  margin-top: 150px;
 }
 
 /* =========================
@@ -590,7 +590,8 @@ footer {
   animation-delay: 4s;
 }
 .ticket:hover .ticket-left {
-  transform: translateX(-4px) rotate(-1deg);
+  transform: rotate(-1deg);
+  transform-origin: right bottom;
 }
 .ticket:hover .ticket-right {
   transform: rotate(-1deg);
@@ -1390,6 +1391,7 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  padding-block: 100px;
 }
 .archive-collage:hover .item01 {
   transform: translate(240px, 90px) rotate(-24deg);
