@@ -1387,31 +1387,31 @@ footer {
   z-index: 1;
 }
 
-.archive-collage {
+Ï .archive-collage {
   margin: 0 auto;
   display: flex;
   justify-content: center;
   padding-block: 100px;
 }
-.archive-collage:hover .item01 {
+Ï .archive-collage:hover .item01 {
   transform: translate(240px, 90px) rotate(-24deg);
 }
-.archive-collage:hover .item02 {
+Ï .archive-collage:hover .item02 {
   transform: translate(170px, 35px) rotate(-16deg);
 }
-.archive-collage:hover .item03 {
+Ï .archive-collage:hover .item03 {
   transform: translate(90px, -10px) rotate(-8deg);
 }
-.archive-collage:hover .item04 {
+Ï .archive-collage:hover .item04 {
   transform: translate(0, -35px) rotate(0deg);
 }
-.archive-collage:hover .item05 {
+Ï .archive-collage:hover .item05 {
   transform: translate(-90px, -10px) rotate(8deg);
 }
-.archive-collage:hover .item06 {
+Ï .archive-collage:hover .item06 {
   transform: translate(-170px, 35px) rotate(16deg);
 }
-.archive-collage:hover .item07 {
+Ï .archive-collage:hover .item07 {
   transform: translate(-240px, 90px) rotate(24deg);
 }
 
@@ -1508,6 +1508,7 @@ footer {
   mask-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  animation: fadeInOut 10s ease-in-out infinite;
 }
 
 .cloud--01 {
@@ -1585,6 +1586,60 @@ footer {
   }
   50% {
     transform: translate(60px, -20px);
+  }
+}
+.cloud--01 .cloud-mask {
+  animation-delay: 0s;
+}
+
+.cloud--02 .cloud-mask {
+  animation-delay: 1s;
+}
+
+.cloud--03 .cloud-mask {
+  animation-delay: 2s;
+}
+
+.cloud--04 .cloud-mask {
+  animation-delay: 3s;
+}
+
+.cloud--05 .cloud-mask {
+  animation-delay: 4s;
+}
+
+.cloud--06 .cloud-mask {
+  animation-delay: 5s;
+}
+
+.cloud--07 .cloud-mask {
+  animation-delay: 6s;
+}
+
+.cloud--08 .cloud-mask {
+  animation-delay: 7s;
+}
+
+.cloud--09 .cloud-mask {
+  animation-delay: 8s;
+}
+
+.cloud--10 .cloud-mask {
+  animation-delay: 9s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .archive-photo-ring {

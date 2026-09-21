@@ -404,48 +404,72 @@
 }
 
 
+// ========================
+// 4月アーカイブ
+// ========================
 
 
+// ========================
+// 雲アニメーション全体
+// ========================
 
-
-
-//4月アーカイブ
 .archive-animation-box {
     position: relative;
     width: 100%;
-    height: 1000px; // 雲が浮かぶ範囲の高さ
+    height: 1000px; // 雲を配置するエリアの高さ
 }
 
+
+// ========================
+// 雲の共通設定
+// ========================
+
+// 雲1つ分の外側
+// 配置と「ぷかぷか」アニメーションを担当
 .cloud-photo-wrap {
-    position: absolute; // 自由な位置に置けるようにする
-    width: 300px; // 雲1つの大きさ
+    position: absolute;
+    width: 300px;
 }
 
+// 雲の中の写真
+// SVGで雲の形に切り抜き、フェードイン・アウトを担当
 .cloud-mask {
     width: 100%;
-    aspect-ratio: 1 / 1; // SVGの縦横比に合わせて調整
+    aspect-ratio: 1 / 1;
+
+    // 写真を雲の形に切り抜く
     -webkit-mask-image: url('../img/clouds.svg');
     mask-image: url('../img/clouds.svg');
     -webkit-mask-size: contain;
     mask-size: contain;
     -webkit-mask-repeat: no-repeat;
     mask-repeat: no-repeat;
+
+    // 写真の表示方法
     background-size: cover;
     background-position: center;
+
+    // 写真が現れたり消えたりする
+    animation: fadeInOut 10s ease-in-out infinite;
 }
 
-// 雲それぞれの配置と、ぷかぷかアニメーション
+
+// ========================
+// 雲それぞれの配置
+// ＋ ぷかぷかアニメーション
+// ========================
+
 .cloud--01 {
     top: 15%;
     left: 2%;
-    animation: float 6s ease-in-out infinite; //6秒かけてゆっくり動く
+    animation: float 6s ease-in-out infinite;
 }
 
 .cloud--02 {
     top: 5%;
     left: 18%;
     animation: float 3s ease-in-out infinite;
-    animation-delay: 0.8s; //少しずらす
+    animation-delay: 0.8s;
 }
 
 .cloud--03 {
@@ -504,7 +528,11 @@
     animation-delay: 2.3s;
 }
 
-// 「ぷかぷか」浮かぶ動き
+
+// ========================
+// ぷかぷか浮かぶ動き
+// ========================
+
 @keyframes float {
 
     0%,
@@ -513,11 +541,92 @@
     }
 
     50% {
-        transform: translate(60px, -20px); // 右に10px、上に20px
+        transform: translate(60px, -20px);
     }
 }
 
 
+// ========================
+// フェードイン・アウト
+// 雲ごとに開始時間をずらす
+// ========================
+
+.cloud--01 .cloud-mask {
+    animation-delay: 0s;
+}
+
+.cloud--02 .cloud-mask {
+    animation-delay: 1s;
+}
+
+.cloud--03 .cloud-mask {
+    animation-delay: 2s;
+}
+
+.cloud--04 .cloud-mask {
+    animation-delay: 3s;
+}
+
+.cloud--05 .cloud-mask {
+    animation-delay: 4s;
+}
+
+.cloud--06 .cloud-mask {
+    animation-delay: 5s;
+}
+
+.cloud--07 .cloud-mask {
+    animation-delay: 6s;
+}
+
+.cloud--08 .cloud-mask {
+    animation-delay: 7s;
+}
+
+.cloud--09 .cloud-mask {
+    animation-delay: 8s;
+}
+
+.cloud--10 .cloud-mask {
+    animation-delay: 9s;
+}
+
+
+// ========================
+// ふわっと現れて、ふわっと消える動き
+// ========================
+
+@keyframes fadeInOut {
+
+    0% {
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+
+// <div class="cloud-photo-wrap cloud--01">  <!-- 外側 -->
+//     <div class="cloud-mask">              <!-- 内側 -->
+//     </div>
+// </div>
+// 外側 .cloud-photo-wrap / .cloud--01
+//   └─ 雲をどこに置くか
+//   └─ 雲をぷかぷか動かす（float）
+
+// 内側 .cloud-mask
+//   └─ 写真を雲の形にする
+//   └─ 写真を現したり消したりする（fadeInOut）
 
 //.archive-mar.html(3月のアーカイブ)
 
