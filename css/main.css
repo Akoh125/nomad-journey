@@ -1506,6 +1506,7 @@ footer {
   mask-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  animation: fadeInOut 10s ease-in-out infinite;
 }
 
 .cloud--01 {
@@ -1583,6 +1584,60 @@ footer {
   }
   50% {
     transform: translate(60px, -20px);
+  }
+}
+.cloud--01 .cloud-mask {
+  animation-delay: 0s;
+}
+
+.cloud--02 .cloud-mask {
+  animation-delay: 1s;
+}
+
+.cloud--03 .cloud-mask {
+  animation-delay: 2s;
+}
+
+.cloud--04 .cloud-mask {
+  animation-delay: 3s;
+}
+
+.cloud--05 .cloud-mask {
+  animation-delay: 4s;
+}
+
+.cloud--06 .cloud-mask {
+  animation-delay: 5s;
+}
+
+.cloud--07 .cloud-mask {
+  animation-delay: 6s;
+}
+
+.cloud--08 .cloud-mask {
+  animation-delay: 7s;
+}
+
+.cloud--09 .cloud-mask {
+  animation-delay: 8s;
+}
+
+.cloud--10 .cloud-mask {
+  animation-delay: 9s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 .archive-photo-ring {
