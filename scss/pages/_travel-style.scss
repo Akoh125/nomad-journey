@@ -145,11 +145,7 @@
 
     }
 
-
-    &:hover &-left {
-        transform: translateX(-4px) rotate(-1deg);
-    }
-
+    &:hover &-left,
     &:hover &-right {
         transform: rotate(-1deg);
         transform-origin: right bottom; //回転軸の基準値の指定 ←これでホバーしたときにstabとズレない

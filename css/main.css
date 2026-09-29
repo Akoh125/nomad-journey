@@ -588,10 +588,7 @@ footer {
 .ticket-image .ticket-img02 {
   animation-delay: 4s;
 }
-.ticket:hover .ticket-left {
-  transform: translateX(-4px) rotate(-1deg);
-}
-.ticket:hover .ticket-right {
+.ticket:hover .ticket-left, .ticket:hover .ticket-right {
   transform: rotate(-1deg);
   transform-origin: right bottom;
 }
