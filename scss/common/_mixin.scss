@@ -1,0 +1,18 @@
+// ブレイクポイントを指定
+$tb: 768px; //tb means tablet
+$sp: 500px; //sp means smart phone
+
+
+//全ページ共通
+
+@mixin tb{
+    @media(max-width:($tb)){
+        @content;
+    }
+}
+
+@mixin sp{
+    @media(max-width:($sp)){
+        @content;
+    }
+}

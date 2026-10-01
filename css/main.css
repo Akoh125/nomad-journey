@@ -94,20 +94,16 @@ li {
   .header-logo {
     width: 70px;
   }
-  /* ハンバーガーメニューボタン全体のサイズ設定 */
   .hamburger {
     width: 50px;
     height: 50px;
     cursor: pointer;
     position: fixed;
     display: block;
-    /*常に右上に表示*/
     top: 20px;
-    /*position: fixed; top: 20px;right: 20px;で右上から20px位置固定*/
     right: 20px;
     z-index: 9999;
   }
-  /* ボタンの横線の長さと高さ(太さ) */
   .hamburger span {
     width: 30px;
     height: 2px;
@@ -116,12 +112,10 @@ li {
     position: absolute;
     left: 10px;
     transition: all 0.4s;
-    /*ボタンが押されてxに切り替わる時の速度*/
   }
   .open .hamburger span {
     background-color: #fff;
   }
-  /* ハンバーガーメニューボタンの3本の線の上からの縦位置指定 */
   .hamburger span:nth-of-type(1) {
     top: 16px;
   }
@@ -131,8 +125,6 @@ li {
   .hamburger span:nth-of-type(3) {
     top: 32px;
   }
-  /* ボタンをxにする */
-  /* jsでもheaderのクラス.open(開閉の意味)に統一 */
   header.open .hamburger span:nth-of-type(1) {
     top: 24px;
     transform: rotate(-45deg);
@@ -144,30 +136,22 @@ li {
     top: 24px;
     transform: rotate(45deg);
   }
-  /* navの閉じている状態と開いた状態 */
-  /* 閉じる＝画面外に追い出す＋見えなくする
-  　　開く＝元の位置に戻す＋見えるようにする */
   .nav-menu {
     position: fixed;
     top: 0;
-    /*画面の上にピッタリくるため必要*/
     left: 0;
     width: 100%;
-    /*質問：これは必要？→解答：必要*/
     height: 100vh;
     transition: opacity 0.4s;
     background-color: #C2BCB1;
     opacity: 0;
-    /*見えなくする*/
     visibility: hidden;
     z-index: 20;
   }
   .open .nav-menu {
     opacity: 1;
-    /*見えるようにする*/
     visibility: visible;
   }
-  /* メニューを縦に並べる */
   .nav-menu ul {
     height: 100vh;
     display: flex;
