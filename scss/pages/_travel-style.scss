@@ -1,3 +1,5 @@
+@use "../common/mixin" as m;
+
 .travel-style {
     position: relative;
     padding-bottom: 150px;
@@ -239,10 +241,11 @@
     }
 }
 
+
 // ========================
 // Smartphone
 // ========================
-@media (max-width: 768px) {
+@include m.tb {
 
     .travel-style {
         padding-bottom: 50px;
