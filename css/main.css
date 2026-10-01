@@ -1386,6 +1386,7 @@ footer {
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  padding-block: 100px;
 }
 .archive-collage:hover .item01 {
   transform: translate(240px, 90px) rotate(-24deg);
