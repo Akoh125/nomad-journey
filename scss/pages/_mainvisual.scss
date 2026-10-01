@@ -1,3 +1,5 @@
+@use "../common/mixin" as m;
+
 // 共通設定
 .mainvisual {
     width: 100%;
@@ -5,6 +7,7 @@
     //tickerを作ると<section>に対してtickerが長くなり右側に変なmarginが作られてしまう。
     //そのため<section class="mainvisual">に対してoverflow-x: hidden; を入れてはみ出したものを見えないようにする。
     overflow-x: hidden; 
+
     &-inner {
         max-width: 1920px;
         margin: 0 auto;
@@ -224,10 +227,11 @@
     left: 67.98%;
 }
 
+
 // ========================
 // Smartphone
 // ========================
-@media (max-width: 768px) {
+@include m.tb {
 
     .mainvisual {
 
