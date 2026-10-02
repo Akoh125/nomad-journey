@@ -1,3 +1,5 @@
+@use "../common/mixin" as m;
+
 .contact {
     background-color: #C2BCB1;
     color: black;
@@ -106,7 +108,7 @@
 // ========================
 // Smartphone
 // ========================
-@media (max-width: 768px) {
+@include m.tb {
 
     .contact {
         padding: 50px 0 70px;
