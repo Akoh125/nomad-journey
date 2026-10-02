@@ -1,3 +1,5 @@
+@use "../common/mixin" as m;
+
 // 見た目(矢印の形、余白など) → SCSSファイル(slick.scssなど)に書く
 // 動きの設定(centerMode、autoplay、スライド枚数など) → JavaScriptファイルに書く
 
@@ -86,7 +88,7 @@
 // ========================
 // Smartphone
 // ========================
-@media (max-width: 768px) {
+@include m.tb {
     .news {
 
         &-section-copy {
