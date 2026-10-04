@@ -1786,8 +1786,6 @@ footer {
   .collage-item img {
     height: 180px;
   }
-}
-@media (max-width: 768px) {
   .archive-animation-box {
     height: 900px;
     overflow: hidden;
