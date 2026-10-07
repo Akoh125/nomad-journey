@@ -12,7 +12,7 @@
         max-width: 1920px;
         margin: 0 auto;
         position: relative;
-        height: 100vh;
+        height: calc(100vh - 174px);
     }
 
     &-circle {
@@ -75,7 +75,7 @@
     &-ticker {
         // 横スクロールアニメーション
         position: absolute;
-        top: 85.36%;
+        top: 90.36%;
         display: flex; //<li>は何も指定しないと縦並びになってしまうため横並びにさせること   
         white-space: nowrap; //文字の折り返しなし
         animation: ticker 50s linear infinite;

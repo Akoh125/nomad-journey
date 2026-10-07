@@ -206,7 +206,7 @@ footer {
   max-width: 1920px;
   margin: 0 auto;
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 174px);
 }
 .mainvisual-circle {
   position: absolute;
@@ -260,7 +260,7 @@ footer {
 }
 .mainvisual-ticker {
   position: absolute;
-  top: 85.36%;
+  top: 90.36%;
   display: flex;
   white-space: nowrap;
   animation: ticker 50s linear infinite;
