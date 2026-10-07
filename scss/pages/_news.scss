@@ -4,6 +4,7 @@
 // 動きの設定(centerMode、autoplay、スライド枚数など) → JavaScriptファイルに書く
 
 .news {
+    overflow-x: hidden; // tickerの横へのはみ出しを隠す
 
     &-section-copy {
         text-align: center;
@@ -122,13 +123,13 @@
             margin-bottom: 6px;
         }
 
-        .genre {
-            margin-bottom: 6px;
+        &-card-name {
+            margin-inline: 20px;
+            font-size: 10px;
         }
 
-        .news-card-name {
-            margin-inline: 20px;
-            font-size: 12px;
+        .genre {
+            margin-bottom: 6px;
         }
 
         &-ticker {

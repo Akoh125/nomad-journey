@@ -427,7 +427,7 @@ footer {
   .polaroid .polaroid04 {
     width: 90px;
     top: 27%;
-    left: 78%;
+    left: 75%;
   }
   .polaroid .polaroid04 img {
     height: 80px;
@@ -443,7 +443,7 @@ footer {
   .polaroid .polaroid06 {
     width: 220px;
     top: 54%;
-    left: 60%;
+    left: 45%;
   }
   .polaroid .polaroid06 img {
     height: 100px;
@@ -723,6 +723,9 @@ footer {
     font-size: 12px;
   }
 }
+.news {
+  overflow-x: hidden;
+}
 .news-section-copy {
   text-align: center;
   font-family: "Madimi One", sans-serif;
@@ -807,12 +810,12 @@ footer {
   .news-card-date {
     margin-bottom: 6px;
   }
+  .news-card-name {
+    margin-inline: 20px;
+    font-size: 10px;
+  }
   .news .genre {
     margin-bottom: 6px;
-  }
-  .news .news-card-name {
-    margin-inline: 20px;
-    font-size: 12px;
   }
   .news-ticker {
     font-size: 12px;
