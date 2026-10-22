@@ -1656,8 +1656,8 @@ footer {
 }
 .archive-animation-box {
   position: relative;
-  width: 100%;
   height: 1000px;
+  margin-bottom: 150px;
 }
 
 .cloud-photo-wrap {
@@ -1813,7 +1813,7 @@ footer {
 .archive-photo-ring {
   width: 700px;
   height: 700px;
-  margin: 150px auto 0;
+  margin: 150px 150px;
   position: relative;
 }
 

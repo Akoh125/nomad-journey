@@ -405,17 +405,11 @@
     }
 }
 
-
-
-
-
-
-
 //4月アーカイブ
 .archive-animation-box {
     position: relative;
-    width: 100%;
     height: 1000px; // 雲が浮かぶ範囲の高さ
+    margin-bottom: 150px;
 }
 
 .cloud-photo-wrap {
@@ -601,7 +595,7 @@
 .archive-photo-ring {
     width: 700px;
     height: 700px;
-    margin: 150px auto 0; // ← 上に150px余白を追加
+    margin: 150px 150px;
     position: relative;
 }
 
