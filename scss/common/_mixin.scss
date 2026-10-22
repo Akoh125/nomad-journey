@@ -1,18 +1,41 @@
+// ========================
 // ブレイクポイントを指定
-$tb: 768px; //tb means tablet
-$sp: 500px; //sp means smart phone
+// ========================
+
+$pc: 1100px; // 小さめのPC・タブレット横向き
+$tb: 768px;  // タブレット
+$sp: 500px;  // スマートフォン
+$ss: 375px;  // 小さめのスマートフォン
 
 
-//全ページ共通
+// ========================
+// メディアクエリ
+// ========================
 
-@mixin tb{
-    @media(max-width:($tb)){
+// 1100px以下
+@mixin pc {
+    @media (max-width: $pc) {
         @content;
     }
 }
 
-@mixin sp{
-    @media(max-width:($sp)){
+// 768px以下
+@mixin tb {
+    @media (max-width: $tb) {
+        @content;
+    }
+}
+
+// 500px以下
+@mixin sp {
+    @media (max-width: $sp) {
+        @content;
+    }
+}
+
+// 375px以下
+@mixin ss {
+    @media (max-width: $ss) {
         @content;
     }
 }

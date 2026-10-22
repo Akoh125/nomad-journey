@@ -233,35 +233,43 @@
 
 
 // ========================
-// Smartphone
+// レスポンシブ
 // ========================
+//scaleの解説：transform: scale(0.8);でカード・写真・文字・余白まで全部まとめて80%になる！
+@include m.pc {
+    .archives {
+        &-grid {
+            transform: translate(-55%, -50%) rotate(-10deg) scale(0.74);
+        }
+    }
+}
+
 @include m.tb {
 
     .archives {
 
-        // セクション上のコピー
+        // ========================
+        // セクション見出し
+        // ========================
         &-section-copy {
             font-size: 16px;
             margin-top: 60px;
             margin-bottom: 20px;
         }
 
-        // セクションタイトル
         &-section-title {
             font-size: 28px;
             margin-bottom: 20px;
         }
 
+        // ========================
         // アルバム全体
+        // ========================
         &-album {
-            position: relative;
-            display: inline-block;
             width: 80%;
         }
 
-        // 背景画像を基準にする
         &-inner {
-            position: relative;
             margin: 0 auto;
             width: 100%;
 
@@ -270,12 +278,10 @@
             }
         }
 
-        // アルバム背景画像
         &-bg {
             height: auto;
         }
 
-        // 日付
         &-date {
             font-size: 11px;
             padding: 10px 4px;
@@ -284,129 +290,89 @@
         // ========================
         // 4枚のカード
         // ========================
-
         &-grid {
-            position: absolute;
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            width: 62%;
-            gap: 6px;
-            top: 50%;
-            left: 50%;
-            border-radius: 5px;
-            z-index: 1;
+            width: 325px;
+            transform: translate(-55%, -50%) rotate(-10deg) scale(1.15);
         }
 
         &-card {
             padding: 6px;
             border-radius: 6px;
-            // PCの影をスマホでは少し弱くする
             box-shadow: 4px 3px 4px rgb(143, 138, 138);
         }
-
 
         // ========================
         // JUN
         // ========================
-
         &-jun-flame {
             width: 120px;
             height: 160px;
             margin: 0 auto;
             border-radius: 7px;
-            position: relative;
         }
 
         &-photos-jun {
-            display: flex;
-            justify-content: center;
-
             li {
                 width: 48px;
             }
 
             img {
-                width: 100%;
                 height: 48px;
                 border-width: 2px;
             }
-        }
 
-        &-photos-jun li:nth-child(1) {
-            z-index: 2;
+            li:nth-child(2) {
+                margin-top: 40%;
+            }
         }
-
-        &-photos-jun li:nth-child(2) {
-            z-index: 1;
-            margin-top: 40%;
-        }
-
 
         // ========================
         // MAY
         // ========================
-
         &-may-flame {
             width: 120px;
             height: 160px;
             margin: 0 auto;
             border-radius: 7px;
-            position: relative;
         }
 
         &-photos-may {
             width: 96px;
-            position: absolute;
             top: 35px;
             left: 12px;
 
             img {
-                width: 100%;
                 height: 110px;
-
                 border-width: 2px;
                 border-radius: 10px;
             }
         }
 
-
         // ========================
         // APR
         // ========================
-
         &-apr-flame {
             width: 120px;
             height: 160px;
             margin: 0 auto;
             border-radius: 8px;
-            position: relative;
         }
 
         &-photos-apr {
-            display: flex;
-            justify-content: center;
-
             li {
                 width: 55px;
             }
 
             img {
-                width: 100%;
                 height: 55px;
-
                 border-width: 2px;
                 border-radius: 10px;
             }
-        }
 
-        &-photos-apr li:nth-child(1) {
-            z-index: 2;
-        }
-
-        &-photos-apr li:nth-child(2) {
-            z-index: 1;
-            margin-left: -10px;
-            margin-top: 10px;
+            li:nth-child(2) {
+                margin-left: -10px;
+                margin-top: 10px;
+            }
         }
 
         &-apr-text {
@@ -416,57 +382,70 @@
             line-height: 1.4;
         }
 
-
         // ========================
         // MAR
         // ========================
-
         &-mar-flame {
             width: 120px;
             height: 160px;
             margin: 0 auto;
             border-radius: 8px;
-            position: relative;
         }
 
         &-photos-mar {
-
             li {
-                position: absolute;
                 width: 50px;
             }
 
             img {
-                width: 100%;
                 height: 60px;
                 border-width: 2px;
                 border-radius: 8px;
             }
+
+            li:nth-child(1) {
+                top: 70px;
+                left: 8px;
+            }
+
+            li:nth-child(2) {
+                top: 65px;
+                left: 35px;
+            }
+
+            li:nth-child(3) {
+                top: 72px;
+                right: 5px;
+            }
         }
 
-        &-photos-mar li:nth-child(1) {
-            top: 70px;
-            left: 8px;
-            transform: rotate(-10deg);
-            z-index: 3;
-        }
-
-        &-photos-mar li:nth-child(2) {
-            top: 65px;
-            left: 35px;
-            transform: rotate(4deg);
-            z-index: 2;
-        }
-
-        &-photos-mar li:nth-child(3) {
-            top: 72px;
-            right: 5px;
-            transform: rotate(10deg);
-            z-index: 1;
-        }
-
+        // ========================
+        // TICKER
+        // ========================
         &-ticker {
             font-size: 12px;
         }
+    }
+}
+
+@include m.sp {
+    .archives {
+
+        &-grid {
+            width: 270px;
+            transform: translate(-55%, -50%) rotate(-10deg) scale(0.8);
+        }
+
+    }
+}
+
+@include m.ss {
+    .archives {
+
+        &-grid {
+            width: 258px;
+            transform: translate(-55%, -50%) rotate(-10deg) scale(0.57);
+        }
+
     }
 }

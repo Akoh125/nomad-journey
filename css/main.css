@@ -255,7 +255,7 @@ footer {
   -webkit-background-clip: text;
   /* 文字の形で背景をくり抜く */
   background-clip: text;
-  top: 69.33%;
+  top: 75.33%;
   left: 28.44%;
 }
 .mainvisual-ticker {
@@ -294,26 +294,26 @@ footer {
   height: 100%;
 }
 .polaroid img {
-  border: 8px solid #FFFFFF;
+  border: 6px solid #FFFFFF;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   width: 100%;
 }
 .polaroid .polaroid01 {
   /* 1枚目の配置 */
   position: absolute;
-  top: 16.95%;
+  top: 19%;
   left: 19.1%;
   transform: rotate(25.61deg);
-  width: 238px;
+  width: 170px;
 }
 .polaroid .polaroid01 img {
-  height: 288px;
+  height: 200px;
 }
 .polaroid .polaroid02 {
   /* 2枚目の配置 */
   position: absolute;
-  top: 16%;
-  left: 46.1%;
+  top: 6%;
+  left: 40%;
   transform: rotate(-18.74deg);
   width: 170px;
 }
@@ -323,8 +323,8 @@ footer {
 .polaroid .polaroid03 {
   position: absolute;
   /* 3枚目の配置 */
-  top: 14.72%;
-  left: 56.45%;
+  top: 7%;
+  left: 52%;
   transform: rotate(22.39deg);
   width: 153px;
 }
@@ -334,62 +334,109 @@ footer {
 .polaroid .polaroid04 {
   /* 4枚目の配置 */
   position: absolute;
-  top: 13.33%;
-  left: 76.38%;
+  top: 4%;
+  left: 69%;
   transform: rotate(22.08deg);
-  width: 156px;
+  width: 180px;
 }
 .polaroid .polaroid04 img {
-  height: 139px;
+  height: 150px;
 }
 .polaroid .polaroid05 {
   /* 4枚目の配置 */
   position: absolute;
-  top: 29.09%;
-  left: 74.3%;
+  top: 13%;
+  left: 80%;
   transform: rotate(-8.21deg);
-  width: 244px;
+  width: 200px;
 }
 .polaroid .polaroid05 img {
-  height: 251px;
+  height: 230px;
 }
 .polaroid .polaroid06 {
   /* 4枚目の配置 */
   position: absolute;
   top: 38.95%;
   left: 35.34%;
-  width: 550px;
+  width: 670px;
 }
 .polaroid .polaroid06 img {
-  height: 263px;
+  height: 250px;
 }
 
 .tagline {
   position: absolute;
   font-size: 24px;
-  top: 73.73%;
+  top: 77.73%;
   left: 67.98%;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
+  .mainvisual-title {
+    font-size: clamp(100px, 12vw, 180px);
+    width: auto;
+    white-space: nowrap;
+  }
+  .mainvisual-subtitle {
+    font-size: clamp(50px, 7vw, 75px);
+    top: 70%;
+  }
+  .mainvisual-circle {
+    width: 240px;
+    top: 8%;
+    left: 9%;
+  }
+  .polaroid .polaroid01 {
+    width: 140px;
+  }
+  .polaroid .polaroid02 {
+    width: 145px;
+  }
+  .polaroid .polaroid03 {
+    width: 135px;
+  }
+  .polaroid .polaroid04 {
+    width: 150px;
+  }
+  .polaroid .polaroid05 {
+    width: 150px;
+    left: 77%;
+  }
+  .polaroid .polaroid06 {
+    display: none;
+  }
+  .tagline {
+    top: 82%;
+    font-size: 17px;
+  }
+}
+@media (max-width: 1100px) and (max-width: 768px) {
   .mainvisual-inner {
     aspect-ratio: auto;
     height: 550px;
   }
   .mainvisual-title {
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    font-size: 77px;
-    width: auto;
+    font-size: 100px;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
     line-height: 0.95;
   }
   .mainvisual-subtitle {
+    left: 50%;
+    transform: translateX(-50%);
     text-align: center;
-    font-size: 42px;
+    font-size: 65px;
     top: 63%;
-    left: 15%;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
   }
   .mainvisual-circle {
-    width: 150px;
+    width: 167px;
     top: 8%;
     left: 5%;
   }
@@ -398,60 +445,224 @@ footer {
     font-size: 12px;
   }
   .polaroid img {
-    border-width: 4px;
+    border-width: 3px;
   }
   .polaroid .polaroid01 {
-    width: 112px;
-    top: 12%;
+    width: 115px;
+    top: 18%;
     left: 20%;
   }
   .polaroid .polaroid01 img {
     height: 115px;
   }
   .polaroid .polaroid02 {
-    width: 90px;
+    width: 110px;
     top: 18%;
-    left: 48%;
+    left: 42%;
   }
   .polaroid .polaroid02 img {
     height: 95px;
   }
   .polaroid .polaroid03 {
     width: 100px;
-    top: 10%;
-    left: 65%;
+    top: 6%;
+    left: 61%;
   }
   .polaroid .polaroid03 img {
     height: 110px;
   }
   .polaroid .polaroid04 {
     width: 90px;
-    top: 27%;
-    left: 75%;
+    top: 20%;
+    left: 77%;
   }
   .polaroid .polaroid04 img {
-    height: 80px;
+    height: 90px;
   }
   .polaroid .polaroid05 {
     width: 80px;
-    top: 35%;
+    top: 30%;
     left: 64%;
   }
   .polaroid .polaroid05 img {
     height: 90px;
   }
   .polaroid .polaroid06 {
-    width: 220px;
-    top: 54%;
-    left: 45%;
+    display: none;
   }
-  .polaroid .polaroid06 img {
-    height: 100px;
+  .tagline {
+    top: 79%;
+    left: 57%;
+    font-size: 14px;
+  }
+}
+@media (max-width: 500px) {
+  .mainvisual-inner {
+    aspect-ratio: auto;
+    height: 550px;
+  }
+  .mainvisual-title {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 74px;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    line-height: 0.95;
+  }
+  .mainvisual-subtitle {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 50px;
+    top: 63%;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+  }
+  .mainvisual-circle {
+    width: 167px;
+    top: 8%;
+    left: 5%;
+  }
+  .mainvisual-ticker {
+    top: 87%;
+    font-size: 12px;
+  }
+  .polaroid img {
+    border-width: 3px;
+  }
+  .polaroid .polaroid01 {
+    width: 115px;
+    top: 18%;
+    left: 20%;
+  }
+  .polaroid .polaroid01 img {
+    height: 115px;
+  }
+  .polaroid .polaroid02 {
+    width: 110px;
+    top: 18%;
+    left: 42%;
+  }
+  .polaroid .polaroid02 img {
+    height: 95px;
+  }
+  .polaroid .polaroid03 {
+    width: 100px;
+    top: 6%;
+    left: 61%;
+  }
+  .polaroid .polaroid03 img {
+    height: 110px;
+  }
+  .polaroid .polaroid04 {
+    width: 90px;
+    top: 20%;
+    left: 77%;
+  }
+  .polaroid .polaroid04 img {
+    height: 90px;
+  }
+  .polaroid .polaroid05 {
+    width: 80px;
+    top: 30%;
+    left: 64%;
+  }
+  .polaroid .polaroid05 img {
+    height: 90px;
+  }
+  .polaroid .polaroid06 {
+    display: none;
+  }
+  .tagline {
+    top: 79%;
+    left: 44%;
+    font-size: 12px;
+  }
+}
+@media (max-width: 375px) {
+  .mainvisual-inner {
+    aspect-ratio: auto;
+    height: 550px;
+  }
+  .mainvisual-title {
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 60px;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+    line-height: 0.95;
+  }
+  .mainvisual-subtitle {
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 42px;
+    top: 63%;
+    width: -moz-max-content;
+    width: max-content;
+    max-width: 100%;
+  }
+  .mainvisual-circle {
+    width: 128px;
+    top: 3%;
+    left: 5%;
+  }
+  .mainvisual-ticker {
+    top: 87%;
+    font-size: 12px;
   }
   .tagline {
     top: 76%;
-    left: 60%;
-    font-size: 12px;
+    left: 34%;
+    font-size: 11px;
+  }
+  .polaroid img {
+    border-width: 3px;
+  }
+  .polaroid .polaroid01 {
+    display: none;
+  }
+  .polaroid .polaroid02 {
+    width: 110px;
+    top: 18%;
+    left: 26%;
+  }
+  .polaroid .polaroid02 img {
+    height: 95px;
+  }
+  .polaroid .polaroid03 {
+    width: 100px;
+    top: 6%;
+    left: 52%;
+  }
+  .polaroid .polaroid03 img {
+    height: 110px;
+  }
+  .polaroid .polaroid04 {
+    width: 90px;
+    top: 20%;
+    left: 69%;
+  }
+  .polaroid .polaroid04 img {
+    height: 90px;
+  }
+  .polaroid .polaroid05 {
+    width: 80px;
+    top: 29%;
+    left: 50%;
+  }
+  .polaroid .polaroid05 img {
+    height: 90px;
+  }
+  .polaroid .polaroid06 {
+    display: none;
   }
 }
 .travel-style {
@@ -1006,6 +1217,11 @@ footer {
   padding-right: 20px;
 }
 
+@media (max-width: 1100px) {
+  .archives-grid {
+    transform: translate(-55%, -50%) rotate(-10deg) scale(0.74);
+  }
+}
 @media (max-width: 768px) {
   .archives-section-copy {
     font-size: 16px;
@@ -1017,12 +1233,9 @@ footer {
     margin-bottom: 20px;
   }
   .archives-album {
-    position: relative;
-    display: inline-block;
     width: 80%;
   }
   .archives-inner {
-    position: relative;
     margin: 0 auto;
     width: 100%;
   }
@@ -1037,15 +1250,8 @@ footer {
     padding: 10px 4px;
   }
   .archives-grid {
-    position: absolute;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    width: 62%;
-    gap: 6px;
-    top: 50%;
-    left: 50%;
-    border-radius: 5px;
-    z-index: 1;
+    width: 325px;
+    transform: translate(-55%, -50%) rotate(-10deg) scale(1.15);
   }
   .archives-card {
     padding: 6px;
@@ -1057,25 +1263,15 @@ footer {
     height: 160px;
     margin: 0 auto;
     border-radius: 7px;
-    position: relative;
-  }
-  .archives-photos-jun {
-    display: flex;
-    justify-content: center;
   }
   .archives-photos-jun li {
     width: 48px;
   }
   .archives-photos-jun img {
-    width: 100%;
     height: 48px;
     border-width: 2px;
   }
-  .archives-photos-jun li:nth-child(1) {
-    z-index: 2;
-  }
   .archives-photos-jun li:nth-child(2) {
-    z-index: 1;
     margin-top: 40%;
   }
   .archives-may-flame {
@@ -1083,16 +1279,13 @@ footer {
     height: 160px;
     margin: 0 auto;
     border-radius: 7px;
-    position: relative;
   }
   .archives-photos-may {
     width: 96px;
-    position: absolute;
     top: 35px;
     left: 12px;
   }
   .archives-photos-may img {
-    width: 100%;
     height: 110px;
     border-width: 2px;
     border-radius: 10px;
@@ -1102,26 +1295,16 @@ footer {
     height: 160px;
     margin: 0 auto;
     border-radius: 8px;
-    position: relative;
-  }
-  .archives-photos-apr {
-    display: flex;
-    justify-content: center;
   }
   .archives-photos-apr li {
     width: 55px;
   }
   .archives-photos-apr img {
-    width: 100%;
     height: 55px;
     border-width: 2px;
     border-radius: 10px;
   }
-  .archives-photos-apr li:nth-child(1) {
-    z-index: 2;
-  }
   .archives-photos-apr li:nth-child(2) {
-    z-index: 1;
     margin-left: -10px;
     margin-top: 10px;
   }
@@ -1136,14 +1319,11 @@ footer {
     height: 160px;
     margin: 0 auto;
     border-radius: 8px;
-    position: relative;
   }
   .archives-photos-mar li {
-    position: absolute;
     width: 50px;
   }
   .archives-photos-mar img {
-    width: 100%;
     height: 60px;
     border-width: 2px;
     border-radius: 8px;
@@ -1151,23 +1331,29 @@ footer {
   .archives-photos-mar li:nth-child(1) {
     top: 70px;
     left: 8px;
-    transform: rotate(-10deg);
-    z-index: 3;
   }
   .archives-photos-mar li:nth-child(2) {
     top: 65px;
     left: 35px;
-    transform: rotate(4deg);
-    z-index: 2;
   }
   .archives-photos-mar li:nth-child(3) {
     top: 72px;
     right: 5px;
-    transform: rotate(10deg);
-    z-index: 1;
   }
   .archives-ticker {
     font-size: 12px;
+  }
+}
+@media (max-width: 500px) {
+  .archives-grid {
+    width: 270px;
+    transform: translate(-55%, -50%) rotate(-10deg) scale(0.8);
+  }
+}
+@media (max-width: 375px) {
+  .archives-grid {
+    width: 258px;
+    transform: translate(-55%, -50%) rotate(-10deg) scale(0.57);
   }
 }
 .navigation-menu ul {
