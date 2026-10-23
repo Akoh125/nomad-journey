@@ -35,11 +35,11 @@
     }
 
     &-text {
-        margin: 35px 30px 20px 30px;
+        margin: 35px 10px 20px 10px;
         display: flex;
         gap: 10px;
         line-height: 0;
-        font-size: 12px;
+        font-size: 7px;
         font-family: 'Forum', sans-serif;
         justify-content: space-between;
     }
@@ -57,6 +57,23 @@
         font-size: 14px;
         font-weight: 550;
     }
+
+    .news-card-excerpt {
+    margin: 12px 30px 0;
+    font-size: 13px;
+    line-height: 1.8;
+    font-family: 'Forum', sans-serif;
+
+    // 通常時は見えない
+    opacity: 0;
+    visibility: hidden;
+
+    // ふわっと表示する準備
+    transform: translateY(10px);
+    transition: opacity 0.4s ease,
+                transform 0.4s ease,
+                visibility 0.4s ease;
+}
 
     &-ticker {
         // 横スクロールアニメーション
@@ -84,11 +101,20 @@
     transform: scale(1.08);
 }
 
+.slick-center .news-card:hover .news-card-excerpt {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
 
 
 // ========================
 // Smartphone
 // ========================
+@include m.pc {
+
+}
+
 @include m.tb {
     .news {
 
